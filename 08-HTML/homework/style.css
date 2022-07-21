@@ -1,0 +1,26 @@
+.thirdDiv {
+  height: 600px;
+  width: 500px;
+  background-color: aquamarine;
+  padding: 50px;
+  border: 2px solid blue;
+}
+
+#spanID {
+  font-size: 18px;
+  margin: 50px;
+}
+
+body {
+  background-image: url('https://img.freepik.com/fotos-premium/viejo-fondo-textura-madera-vintage_55716-1138.jpg?w=2000');
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  color: white;
+  text-align: center;
+  font-family: Recoleta, Gotham, Verdana, Geneva, Tahoma, sans-serif;
+}
