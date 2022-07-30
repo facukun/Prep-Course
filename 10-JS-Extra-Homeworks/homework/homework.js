@@ -27,8 +27,8 @@ function numberOfCharacters(string) {
   var objeto = {};
   for (i = 0; i < letras.length; i++) {
     var counter = 0;
-    for (x = 0; x < string.length; x++) {
-      if (letras[i] === string.charAt(x)) {
+    for (j = 0; j < string.length; j++) {
+      if (letras[i] === string.charAt(j)) {
         counter++;
       }
     }
@@ -55,7 +55,7 @@ function capToFront(s) {
       mayusculas = mayusculas + s.charAt(i);
     }
   }
-  return (mayusculas + minusculas);
+  return mayusculas + minusculas;
 }
 
 
@@ -85,7 +85,7 @@ function capicua(numero) {
   //Escribe tu código aquí
   var string = numero.toString();
   var answer = 'Es capicua';
-  for (i = 0; i < string.length; i++) {
+  for (i = 0; i < string.length / 2; i++) {
     if (string.charAt(i) !== string.charAt(string.length - 1 - i)) {
       answer = 'No es capicua';
     }
@@ -98,13 +98,18 @@ function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+
+  return cadena.split('').filter(letter => letter !== 'a' && letter !== 'b' && letter !== 'c').join('');
+
+  /*ANTES:
   var nuevaCadena = '';
   for (i = 0; i < cadena.length; i++) {
     if (cadena.charAt(i) !== 'a' && cadena.charAt(i) !== 'b' && cadena.charAt(i) !== 'c') {
       nuevaCadena = nuevaCadena + cadena.charAt(i)
     }
   }
-  return nuevaCadena;
+  return nuevaCadena;*/
+
 }
 
 
@@ -112,9 +117,11 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  Callback = (a, b) => a.length - b.length;
+  /*ANTES:
   function Callback(a, b) {
-    return (a.length - b.length);
-  }
+    return a.length - b.length;
+  }*/
   return arr.sort(Callback);
 }
 

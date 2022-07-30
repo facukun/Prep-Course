@@ -6,9 +6,9 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  const objeto = { nombre: nombre };
+  var objeto = { nombre: nombre };
   objeto['edad'] = edad;
-  objeto.meow = function () { return 'Meow!' };
+  objeto.meow = () => 'Meow!';
   return objeto;
 }
 
@@ -33,7 +33,7 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  return (objetoMisterioso.numeroMisterioso * 5);
+  return objetoMisterioso.numeroMisterioso * 5;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -49,10 +49,10 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  const objeto = {
-    'nombre': nombre,
-    'email': email,
-    'password': password
+  var objeto = {
+    nombre: nombre,
+    email: email,
+    password: password
   }
   return objeto;
 }
@@ -61,7 +61,7 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  return (usuario.email !== undefined && usuario.email !== null);
+  return usuario.email !== undefined && usuario.email !== null;
 }
 
 function tienePropiedad(objeto, propiedad) {
@@ -69,7 +69,7 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (objeto[propiedad] !== undefined && objeto[propiedad] !== null)
+  return objeto[propiedad] !== undefined && objeto[propiedad] !== null;
 }
 
 function verificarPassword(usuario, password) {
@@ -77,7 +77,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (password === usuario.password);
+  return password === usuario.password;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {

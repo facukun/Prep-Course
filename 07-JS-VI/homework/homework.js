@@ -4,11 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  var nombreMayuscula = nombre.charAt(0).toUpperCase();
-  for (i = 1; i < nombre.length; i++) {
-    nombreMayuscula = nombreMayuscula + nombre.charAt(i);
-  }
-  return nombreMayuscula;
+  return nombre.charAt(0).toUpperCase() + nombre.substring(1, nombre.length);
 }
 
 function invocarCallback(cb) {
@@ -29,9 +25,7 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  const suma = numeros.reduce(function (value, number) {
-    return value + number;
-  })
+  var suma = numeros.reduce((value1, value2) => value1 + value2);
   cb(suma);
 }
 
@@ -39,9 +33,7 @@ function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  array.forEach(element => {
-    cb(element);
-  });
+  array.forEach(element => cb(element));
 }
 
 function map(array, cb) {
@@ -49,9 +41,7 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
-  const newArray = array.map(function (element) {
-    return cb(element);
-  })
+  const newArray = array.map(element => cb(element));
   return newArray;
 }
 
@@ -59,13 +49,7 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  var newArray = [];
-  array.forEach(element => {
-    if (element.charAt(0) === 'a' || element.charAt(0) === 'A') {
-      newArray.push(element);
-    }
-  });
-  return newArray;
+  return array.filter(element=>element.charAt(0) === 'a' || element.charAt(0) === 'A');
 }
 
 // No modificar nada debajo de esta línea

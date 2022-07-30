@@ -26,10 +26,7 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  for (i = 0; i < array.length; i++) {
-    array[i] = array[i] + 1;
-  }
-  return array;
+  return array.map(valor => valor + 1);
 }
 
 
@@ -58,11 +55,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  var frase = palabras[0];
-  for (i = 1; i < palabras.length; i++) {
-    frase = frase + ' ' + palabras[i];
-  }
-  return frase;
+  return palabras.join(' ');
 }
 
 
@@ -70,7 +63,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  return (array.includes(elemento));
+  return array.includes(elemento);
 }
 
 
@@ -78,11 +71,7 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var suma = 0;
-  for (i = 0; i < numeros.length; i++) {
-    suma = suma + numeros[i];
-  }
-  return suma;
+  return numeros.reduce((valor1, valor2) => valor1 + valor2);
 }
 
 
@@ -90,11 +79,7 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  var suma = 0;
-  for (i = 0; i < resultadosTest.length; i++) {
-    suma = suma + resultadosTest[i];
-  }
-  return (suma / resultadosTest.length);
+  return (resultadosTest.reduce((valor1, valor2) => valor1 + valor2) / resultadosTest.length);
 }
 
 
@@ -130,13 +115,7 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo) {
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-  var counter = 0;
-  for (i = 0; i < arreglo.length; i++) {
-    if (arreglo[i] > 18) {
-      counter++;
-    }
-  }
-  return counter;
+  return arreglo.filter(value => value > 18).length;
 }
 
 
@@ -145,13 +124,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí
-
-  if (numeroDeDia === 1 || numeroDeDia === 7) {
-    return 'Es fin de semana'
-  }
-  else {
-    return 'Es dia Laboral'
-  }
+  return numeroDeDia === 1 || numeroDeDia === 7 ? 'Es fin de semana' : 'Es dia Laboral';
 }
 
 
@@ -159,14 +132,7 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  var firstNumber;
-  var value = n;
-  do {
-    firstNumber = Math.floor(value);
-    value = value / 10
-  }
-  while (value > 1)
-  return (firstNumber === 9)
+  return n.toString()[0] === '9';
 }
 
 
@@ -189,18 +155,8 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var newArray = [];
-  array.forEach(function (mes) {
-    if (mes === 'Enero' || mes === 'Marzo' || mes === 'Noviembre') {
-      newArray.push(mes);
-    }
-  });
-  if (newArray.length < 3) {
-    return 'No se encontraron los meses pedidos'
-  }
-  else {
-    return newArray;
-  }
+  var newArray = array.filter(mes => mes === 'Enero' || mes === 'Marzo' || mes === 'Noviembre');
+  return newArray.length < 3 ? 'No se encontraron los meses pedidos' : newArray;
 }
 
 
@@ -208,13 +164,7 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  var newArray = [];
-  array.forEach(function (number) {
-    if (number > 100) {
-      newArray.push(number);
-    }
-  });
-  return newArray;
+  return array.filter(value => value > 100);
 }
 
 
